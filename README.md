@@ -168,6 +168,13 @@ Explore my repositories and follow my development journey:
 
 ---
 
+🏆 Achievements & Recognition
+
+- 🥇 1st Runner-Up – Nexians Academy Hackathon
+  - Recognized for outstanding performance, innovation, and problem-solving.
+  - Awarded by Nexians Academy.
+  - Certificate of Achievement received.
+
 ## 💬 Let's Connect!
 
 I'm interested in connecting with developers, AI enthusiasts, recruiters, and people working on innovative technology projects.
