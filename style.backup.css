@@ -1,0 +1,167 @@
+/* ============ 1. BASICS ============ */
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap");
+
+:root {
+  --grey: #d9dade;      /* light grey background */
+  --black: #000;
+  --white: #fff;
+  --muted: #3d3d3f;     /* dark grey for faded text */
+  --lavender: #8d87b5;  /* very subtle accent */
+  --display: "Anton", Impact, "Arial Narrow", sans-serif;
+  --body: "Plus Jakarta Sans", Arial, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }               /* smooth scrolling */
+body { font-family: var(--body); background: var(--grey); color: var(--black); overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+a:focus-visible { outline: 2px solid var(--lavender); outline-offset: 3px; }
+
+/* ============ 2. SHARED PIECES ============ */
+/* Buttons: outline that fills with black on hover */
+.btn {
+  display: inline-block; padding: 12px 22px; border: 1px solid var(--black);
+  border-radius: 8px; font-weight: 600; font-size: 13px; background: transparent;
+  transition: background .3s, color .3s, transform .3s;
+}
+.btn:hover { background: var(--black); color: var(--white); transform: translateY(-2px); }
+.btn--small { padding: 9px 18px; font-size: 12px; }
+
+/* Entrance animation used on hero text */
+@keyframes rise { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
+
+/* ============ 3. NAVIGATION ============ */
+.nav {
+  position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
+  width: min(94%, 1200px); z-index: 10;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  background: var(--white); padding: 12px 20px; border-radius: 16px;
+  font-size: 14px; font-weight: 500;
+}
+.nav__brand { display: flex; align-items: center; gap: 8px; }
+.nav__logo { background: var(--black); color: var(--white); font-family: var(--display); padding: 6px 8px; border-radius: 8px; font-size: 13px; }
+.nav__links { display: flex; gap: 48px; font-size: 13px; }
+.nav__links a { transition: opacity .3s; }
+.nav__links a:hover { opacity: .5; }
+
+/* ============ 4. HERO ============ */
+.hero { position: relative; min-height: 100vh; padding: 140px 5vw 0; overflow: hidden; }
+.hero__role { font-size: 18px; line-height: 1.5; animation: rise .9s .1s both; position: relative; z-index: 1; }
+.hero__name {
+  position: absolute; left: 50%; top: 52%; transform: translate(-50%, -50%);
+  font-family: var(--display); font-weight: 400; font-size: 25vw; line-height: 1;
+  white-space: nowrap; z-index: 1; animation: rise 1.1s .2s both;
+}
+/* The portrait sits IN FRONT of the name, so it overlaps the letters */
+.hero__photo {
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  height: 82vh; width: auto; z-index: 2;
+  animation: reveal 1.2s .5s both cubic-bezier(.2, .7, .2, 1);   /* image reveal */
+}
+@keyframes reveal { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0); } }
+.hero__scroll { position: absolute; right: 5vw; bottom: 40px; font-size: 16px; z-index: 3; text-align: right; }
+.hero__scroll span { display: block; width: 2px; height: 40px; background: var(--black); margin: 8px 0 0 auto; animation: pulse 1.8s infinite; transform-origin: top; }
+@keyframes pulse { 0%,100% { transform: scaleY(.3); } 50% { transform: scaleY(1); } }
+/* Thin decorative circles from the reference */
+.hero__circle { position: absolute; border: 1px solid #6a6a70; border-radius: 50%; }
+.hero__circle--a { width: 45vw; height: 45vw; top: -20vw; left: 8vw; }
+.hero__circle--b { width: 30vw; height: 30vw; bottom: -4vw; right: -6vw; }
+
+/* ============ 5. ABOUT (black) ============ */
+.about { background: var(--black); color: var(--white); padding: 90px 5vw 100px; position: relative; }
+.about__count { position: absolute; top: 40px; right: 5vw; color: #777; font-size: 15px; }
+.about__title { font-family: var(--display); font-weight: 400; font-size: 20vw; line-height: 1; transition: letter-spacing .6s; }
+.about__title:hover { letter-spacing: .02em; }
+.about__body { display: flex; gap: 6vw; margin-top: 30px; align-items: flex-start; }
+.about__arrow { font-size: 22vw; line-height: .8; color: var(--muted); flex: 0 0 auto; transition: transform .5s; }
+.about__body:hover .about__arrow { transform: translate(10px, -10px); }
+.about__text { max-width: 620px; font-size: 15px; line-height: 1.7; }
+.about__list { margin: 24px 0; display: grid; gap: 6px; font-size: 14px; color: #bbb; }
+.about__list li::before { content: "/ "; color: var(--lavender); }
+.about__small { font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+
+/* ============ 6. SELECTED WORK ============ */
+.work { background: #f6f6f7; padding: 70px 5vw 80px; }
+.work__top { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; max-width: 1000px; margin: 0 auto; }
+.work__intro { font-size: clamp(18px, 2vw, 24px); line-height: 1.5; max-width: 520px; color: #2a2d34; }
+/* Round "Get in touch" button */
+.circle-btn {
+  flex: 0 0 auto; width: 150px; height: 150px; border: 1px solid #aaa; border-radius: 50%;
+  display: grid; place-items: center; text-align: center; font-size: 20px; text-transform: uppercase;
+  transition: background .35s, color .35s, transform .35s;
+}
+.circle-btn:hover { background: var(--black); color: var(--white); transform: scale(1.06); }
+.work__label { max-width: 1000px; margin: 50px auto 24px; font-size: 11px; font-weight: 600; }
+.work__list { max-width: 1000px; margin: 0 auto; border-top: 1px dashed #aaa; }
+.project { border-bottom: 1px dashed #aaa; position: relative; }
+.project__link { display: flex; justify-content: space-between; align-items: center; padding: 28px 0; gap: 20px; }
+.project__name { font-family: var(--display); font-size: clamp(36px, 7vw, 84px); line-height: 1.1; color: #232a3b; transition: transform .4s, color .4s; }
+.project:hover .project__name { transform: translateX(14px); color: var(--black); }
+.project__cat { font-size: 16px; text-align: right; }
+.project__desc { font-size: 14px; color: #555; max-width: 560px; padding-bottom: 22px; line-height: 1.6; }
+/* Hover preview: hidden until you hover the row */
+.project__preview {
+  position: absolute; right: 22%; top: -30px; width: 280px; z-index: 5;
+  border: 6px solid #a8a8a8; opacity: 0; transform: scale(.9) rotate(-3deg);
+  pointer-events: none; transition: opacity .35s, transform .35s;
+}
+.project:hover .project__preview { opacity: 1; transform: scale(1) rotate(0); }
+
+/* ============ 7. SKILLS MARQUEE ============ */
+.marquee { background: var(--black); color: var(--white); overflow: hidden; padding: 20px 0; }
+.marquee__track { display: flex; width: max-content; animation: scroll 28s linear infinite; }
+.marquee__track span { font-family: var(--display); font-size: 36px; padding: 0 32px; white-space: nowrap; }
+.marquee__track span::after { content: "/"; margin-left: 64px; color: var(--lavender); }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+@keyframes scroll { to { transform: translateX(-50%); } }
+
+/* ============ 8. PROCESS CARD ============ */
+.process { background: #f6f6f7; padding: 60px 4vw; }
+.process__card { background: var(--black); border-radius: 36px; padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; max-width: 1200px; margin: 0 auto; }
+.process__words { font-family: var(--display); font-weight: 400; font-size: clamp(60px, 9vw, 120px); line-height: 1; }
+.process__words span { display: block; color: var(--muted); transition: color .4s, transform .4s; cursor: default; }
+.process__words span.is-active { color: var(--white); }
+.process__words:hover span { color: var(--muted); }        /* hovering lights up one word at a time */
+.process__words span:hover { color: var(--white); transform: translateX(12px); }
+.process__text p { color: #ddd; font-size: 13px; line-height: 1.7; margin-top: 36px; max-width: 360px; }
+.process__img { background: var(--grey); border-radius: 20px; overflow: hidden; aspect-ratio: 4 / 5; }
+.process__img img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s; }
+.process__card:hover .process__img img { transform: scale(1.05); }   /* image scaling */
+
+/* ============ 9. FOOTER ============ */
+.footer { background: var(--grey); padding: 80px 5vw 30px; }
+.footer__top { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.footer__cta { font-weight: 500; font-size: clamp(28px, 4.5vw, 56px); line-height: 1.2; }
+.footer__cta span { font-size: 1.8em; vertical-align: middle; margin-right: 12px; display: inline-block; transition: transform .4s; }
+.footer__cta:hover span { transform: translate(6px, -6px); }
+.footer hr { border: 0; border-top: 1px solid #888; margin: 60px 0 40px; }
+.footer__name { font-family: var(--display); font-size: 11.3vw; line-height: 1; white-space: nowrap; text-align: center; }
+.footer__bottom { display: flex; justify-content: space-between; gap: 16px; margin-top: 30px; font-size: 11px; font-weight: 500; }
+.footer__bottom nav { display: flex; gap: 30px; }
+.footer__bottom a:hover { text-decoration: underline; }
+
+/* ============ 10. RESPONSIVE ============ */
+@media (max-width: 900px) {
+  .nav__links { display: none; }                   /* keep the pill clean on small screens */
+  .project__preview { display: none; }             /* hover previews need a mouse */
+  .process__card { grid-template-columns: 1fr; padding: 28px; }
+  .about__body { flex-direction: column; gap: 10px; }
+  .about__arrow { font-size: 40vw; }
+  .hero__photo { height: 70vh; }
+}
+@media (max-width: 600px) {
+  .work__top { flex-direction: column; }
+  .circle-btn { width: 120px; height: 120px; font-size: 16px; }
+  .project__link { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .project__cat { text-align: left; }
+  .footer__top, .footer__bottom { flex-direction: column; align-items: flex-start; }
+  .about__count { top: 24px; }
+}
+
+/* Respect people who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}

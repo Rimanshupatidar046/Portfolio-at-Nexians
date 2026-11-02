@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rimanshu Patidar | AI/ML Student &amp; Developer</title>
+  <meta name="description" content="Portfolio of Rimanshu Patidar, B.Tech AI &amp; ML student and aspiring AI Engineer from Bhopal, India.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVIGATION: floating white pill -->
+  <header class="nav">
+    <a class="nav__brand" href="#home"><span class="nav__logo">RP</span> RIMANSHU <b>PATIDAR</b></a>
+    <nav class="nav__links">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <!-- EDIT: replace with your email -->
+    <a class="btn btn--small" href="mailto:your-email@example.com">Hire me</a>
+  </header>
+
+  <!-- HERO: giant name behind, portrait in front -->
+  <section class="hero" id="home">
+    <span class="hero__circle hero__circle--a"></span>
+    <span class="hero__circle hero__circle--b"></span>
+    <p class="hero__role">AI/ML Student<br>&amp; Developer</p>
+    <h1 class="hero__name">RIMANSHU</h1>
+    <!-- EDIT: swap for your transparent PNG, e.g. assets/profile.png -->
+    <img class="hero__photo" src="assets/profile.svg" alt="Portrait of Rimanshu Patidar">
+    <p class="hero__scroll">Scroll down<span></span></p>
+  </section>
+
+  <!-- ABOUT: black section -->
+  <section class="about" id="about">
+    <span class="about__count">02/05</span>
+    <h2 class="about__title">/ABOUT</h2>
+    <div class="about__body">
+      <span class="about__arrow">&#8599;</span>
+      <div>
+        <p class="about__text">
+          "Rimanshu Patidar is a B.Tech student in Artificial Intelligence and Machine Learning
+          at Bansal Institute of Science &amp; Technology, Bhopal. He is drawn to generative AI,
+          agentic AI and natural language processing, and he builds web and AI projects to turn
+          what he learns into working software. His goal is to become an AI Engineer."
+        </p>
+        <ul class="about__list">
+          <li>Google Student Ambassador 2026</li>
+          <li>Naukri Campus Student Ambassador</li>
+          <li>Selected in SIH internal hackathon</li>
+        </ul>
+        <p class="about__small">Based in Bhopal, India</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK: intro, round button, project list -->
+  <section class="work" id="work">
+    <div class="work__top">
+      <p class="work__intro">
+        I build AI and web projects across agriculture, education and language, learning
+        a little more with every one.
+      </p>
+      <a class="circle-btn" href="#contact">Get in<br>touch</a>
+    </div>
+
+    <p class="work__label">SELECTED WORKS</p>
+
+    <!-- Each row: edit href (project link), image path, name, category -->
+    <ul class="work__list">
+      <li class="project">
+        <a href="#" class="project__link">
+          <span class="project__name">KrishiBandhu AI</span>
+          <span class="project__cat">Agriculture AI</span>
+          <img class="project__preview" src="assets/projects/krishibandhu.svg" alt="KrishiBandhu AI preview">
+        </a>
+        <p class="project__desc">An AI-powered precision agriculture platform that helps farmers with crop recommendations, disease detection, weather insights, soil intelligence and mandi prices.</p>
+      </li>
+      <li class="project">
+        <a href="#" class="project__link">
+          <span class="project__name">SkillPulse AI</span>
+          <span class="project__cat">Skill Analytics</span>
+          <img class="project__preview" src="assets/projects/skillpulse.svg" alt="SkillPulse AI preview">
+        </a>
+        <p class="project__desc">An intelligent platform that tracks industry skill demand, identifies student skill gaps and provides personalized learning recommendations.</p>
+      </li>
+      <li class="project">
+        <a href="#" class="project__link">
+          <span class="project__name">Project Builder Agent</span>
+          <span class="project__cat">Agentic AI</span>
+          <img class="project__preview" src="assets/projects/project-agent.svg" alt="Autonomous Project Builder Agent preview">
+        </a>
+        <p class="project__desc">Autonomous Project Builder Agent: an AI agent that transforms project ideas into structured development plans and actionable implementation workflows.</p>
+      </li>
+      <li class="project">
+        <a href="#" class="project__link">
+          <span class="project__name">Text Summarization</span>
+          <span class="project__cat">NLP</span>
+          <img class="project__preview" src="assets/projects/summarizer.svg" alt="Text Summarization preview">
+        </a>
+        <p class="project__desc">An NLP-based application that summarizes lengthy documents into concise and meaningful information.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- SKILLS MARQUEE: the list is repeated twice so the loop looks seamless -->
+  <div class="marquee" aria-label="Technical skills">
+    <div class="marquee__track">
+      <span>Python</span><span>C++</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Node.js</span><span>Tailwind CSS</span><span>MongoDB</span><span>Firebase</span>
+      <span>Python</span><span>C++</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Node.js</span><span>Tailwind CSS</span><span>MongoDB</span><span>Firebase</span>
+    </div>
+  </div>
+
+  <!-- PROCESS: black rounded card -->
+  <section class="process">
+    <div class="process__card">
+      <div class="process__text">
+        <h2 class="process__words">
+          <span>LEARN</span>
+          <span class="is-active">BUILD</span>
+          <span>DEPLOY</span>
+        </h2>
+        <p>I start by learning the concept, then build a project around it, then work toward putting it in front of real users. That loop is how I am growing into an AI Engineer.</p>
+      </div>
+      <!-- EDIT: second photo (can be the same transparent PNG) -->
+      <div class="process__img"><img src="assets/profile.svg" alt="Portrait of Rimanshu Patidar"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER / CONTACT -->
+  <footer class="footer" id="contact">
+    <div class="footer__top">
+      <h2 class="footer__cta"><span>&#8599;</span> LET'S WORK<br>TOGETHER</h2>
+      <!-- EDIT: replace with your email -->
+      <a class="btn" href="mailto:your-email@example.com">SEND ME A MESSAGE</a>
+    </div>
+    <hr>
+    <p class="footer__name">RIMANSHU PATIDAR</p>
+    <div class="footer__bottom">
+      <p>&copy; 2026 RIMANSHU PATIDAR. ALL RIGHTS RESERVED.</p>
+      <nav>
+        <!-- EDIT: replace # with your profile URLs -->
+        <a href="#">GITHUB</a>
+        <a href="#">LINKEDIN</a>
+        <a href="mailto:your-email@example.com">EMAIL</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
